@@ -1,0 +1,3 @@
+hewan,kadal
+benda,mobil
+hewan,kucing
