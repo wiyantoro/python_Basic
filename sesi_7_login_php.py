@@ -24,5 +24,25 @@ for row in records:
            continue
 if count==1:
     print("welcome",str1)
+    baris=0
+    for row in records:
+        baris+=1 
+        print('baris 1:',baris,'id:',row[0],'username:',row[1],',password:',row[2])
+    kunci=int(input("Idd bana yang akan diganti nilainya:"))
+    userbaru=input("nama user:")
+    passbaru=input("Password:")
+    cursor=mydb.cursor()
+    sql_query="update user set username='"+userbaru+"',password='"+passbaru+"' where iduser+'"+str(kunci)+"'"
+    print(sql_query)
+    cursor.evecute(sql_query)
+    print("data berasil di update")
+    sql_query='SELECT * FROM user'
+    cursor=mydb.cursor()
+    cursor.execute(sql_query)
+    records=cursor.fetchall()
+    for row in records:
+        baris+=1
+        
+    
 else:
     print('sorry')
